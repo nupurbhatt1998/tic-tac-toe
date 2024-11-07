@@ -1,0 +1,24 @@
+.gameContainer{
+    background-color:#000000;
+    padding: 20px;
+}
+.gridStyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.customButton{
+    background-color:bisque !important;
+    padding: 1rem !important;
+    width: 5rem;
+    height: 2rem;
+}
+.playersList{
+    display: flex;
+    justify-content: center;
+}
+.highlight{
+   border: 1px solid yellow;
+}
