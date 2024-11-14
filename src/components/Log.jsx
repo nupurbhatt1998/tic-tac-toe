@@ -1,13 +1,13 @@
-const Log = ({gameTurns}) =>{
-    let loggedInfo = [] ;
-    for(var turns of gameTurns){
-        const {square, player} = turns;
-        const {row, col}  = square;
-        loggedInfo.push(`${player} (${row},${col})`)
-    }
-   return (<ol>
-        {loggedInfo.map(x=> <li key={x}>{x}</li>)}
-   </ol>)
-}
+const Log = ({ gameTurns }) => {
+  return (
+    <ol>
+      {gameTurns.map((turn) => (
+        <li key={`${turn.square.row} ${turn.square.col}`}>
+          `${turn.player} selected (${turn.square.row}, ${turn.square.col})`
+        </li>
+      ))}
+    </ol>
+  );
+};
 
 export default Log;

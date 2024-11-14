@@ -1,22 +1,7 @@
 import { Button, Grid2 } from "@mui/material";
 import styles from "./TicTacToe.module.css";
 
-const initialBoard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-
-const TicTacToe = ({ highlightSelectedPlayer, gameTurns }) => {
-  
-  let gameBoard = initialBoard;
-  // with of value is aasigned to gameTurn, therefore an empty object is assigned in case of empty array
-  // with in index is assigned to gameTurn ,i.e '0' therefore destructing it results in undefined
-  for(var gameTurn of gameTurns){
-    const {square, player} = gameTurn;
-    const {row, col} = square;
-    gameBoard[row][col] = player;
-  }
+const TicTacToe = ({ highlightSelectedPlayer, gameBoard }) => {
 
 //   const changeHandler = (rowIndex, colIndex) => {
 //     setGameBoard((initialBoard) => {
@@ -43,6 +28,7 @@ const TicTacToe = ({ highlightSelectedPlayer, gameTurns }) => {
               variant="contained"
               className={styles.customButton}
               onClick={() => highlightSelectedPlayer(rowIndex, colIndex)}
+              disabled={col!=null ? true : false}
             >
               {col}
             </Button>
